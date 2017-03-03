@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CSPhotoAction" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b78-ki-GUc">
+                                <rect key="frame" x="156" y="90" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="4J8-Ep-w3h"/>
+                                    <constraint firstAttribute="height" constant="30" id="XLA-kT-OAu"/>
+                                </constraints>
+                                <state key="normal" title="图片列表"/>
+                                <connections>
+                                    <action selector="photosListAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="spC-eM-cMZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80u-TX-4a6">
+                                <rect key="frame" x="156" y="52" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="Kcd-5N-ZRE"/>
+                                    <constraint firstAttribute="height" constant="30" id="xzv-AQ-eAO"/>
+                                </constraints>
+                                <state key="normal" title="相册列表"/>
+                                <connections>
+                                    <action selector="albumListAction" destination="BYZ-38-t0r" eventType="touchUpInside" id="qVC-rN-jlR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="80u-TX-4a6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="32" id="Nun-03-DZv"/>
+                            <constraint firstItem="80u-TX-4a6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oiP-ED-JxY"/>
+                            <constraint firstItem="b78-ki-GUc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sCu-zY-jv2"/>
+                            <constraint firstItem="b78-ki-GUc" firstAttribute="top" secondItem="80u-TX-4a6" secondAttribute="bottom" constant="8" id="zcN-sb-82E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="albumListButton" destination="80u-TX-4a6" id="Xo4-Vk-HAJ"/>
+                        <outlet property="photosListButton" destination="b78-ki-GUc" id="dCG-Qx-Nbk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+        </scene>
+    </scenes>
+</document>
