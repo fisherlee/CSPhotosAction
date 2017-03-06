@@ -14,38 +14,19 @@ private let reuseIdentifier = "CSPhotosCell"
 enum CSAssetLayoutStyle {
     case photos //照片模式
     case album  //相册模式
-    
-    private func itemSize(inBoundingSize size: CGSize) -> (itemSize: CGSize, lineSpacing: Int) {
-        var length = 0
-        let w = Int(size.width)
-        var spacing = 1
-        for i in 1...3 {
-            for n in 4...8 {
-                let x = w - ((n-1) * i)
-                if x % n == 0 && (x/n) > length {
-                    length = x/n
-                    spacing = i
-                }
-            }
-        }
-        
-        return (CGSize(width: length, height: length), spacing)
-    }
-    
+
     func recalculate(layout: UICollectionViewFlowLayout, inBoundingSize size: CGSize) {
+        
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.scrollDirection = .vertical;
+        
         switch self {
         case .photos:
-            layout.minimumLineSpacing = 1
-            layout.minimumInteritemSpacing = 1
-            layout.sectionInset = UIEdgeInsets.zero
-            let itemInfo = self.itemSize(inBoundingSize: size)
-            layout.minimumLineSpacing = CGFloat(itemInfo.lineSpacing)
-            layout.itemSize = itemInfo.itemSize
+            layout.sectionInset = UIEdgeInsets(top: 1, left: 4, bottom: 0, right: 4)
+            layout.itemSize = CGSize(width: (Int(size.width)-20)/5, height: (Int(size.width)-20)/5)
         case .album:
-            layout.minimumLineSpacing = 2
-            layout.minimumInteritemSpacing = 1
             layout.sectionInset = UIEdgeInsets(top: 1, left: 6, bottom: 0, right: 6)
-            layout.scrollDirection = .vertical;
             layout.itemSize = CGSize(width: (Int(size.width)-20)/3, height: (Int(size.width)-20)/3)
         }
     }
@@ -231,8 +212,10 @@ class CSAssetViewController: UICollectionViewController {
                 let options = PHFetchOptions()
                 options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
                 self.fetchResult = PHAsset.fetchAssets(with: options)
-                for idx in 0...fetchResult.count-1 {
-                    dataList.add(fetchResult.object(at: idx) as PHAsset)
+                if self.fetchResult.count > 1 {
+                    for idx in 0...fetchResult.count-1 {
+                        dataList.add(fetchResult.object(at: idx) as PHAsset)
+                    }
                 }
             }
         }
@@ -364,7 +347,6 @@ class CSAssetViewController: UICollectionViewController {
             options.isNetworkAccessAllowed = true
             
             self.imageManager.requestImageData(for: item as! PHAsset, options: options, resultHandler: { (data, string, io, any) in
-                let image = UIImage(data: data!)
                 if self.selectedPhotos.contains(data!) {
                     self.selectedPhotos.remove(data!)
                     cell.setBrulView(select: false)

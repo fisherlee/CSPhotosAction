@@ -24,6 +24,8 @@
 		D009514F1E69159E00626FE2 /* cs_check@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D009513E1E69159E00626FE2 /* cs_check@3x.png */; };
 		D00951501E69159E00626FE2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D009513F1E69159E00626FE2 /* Info.plist */; };
 		D00951511E69159E00626FE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00951401E69159E00626FE2 /* ViewController.swift */; };
+		D00951561E6CFC3B00626FE2 /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = D00951541E6CFC3B00626FE2 /* album.png */; };
+		D00951571E6CFC3B00626FE2 /* photos.png in Resources */ = {isa = PBXBuildFile; fileRef = D00951551E6CFC3B00626FE2 /* photos.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		D009513E1E69159E00626FE2 /* cs_check@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cs_check@3x.png"; sourceTree = "<group>"; };
 		D009513F1E69159E00626FE2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D00951401E69159E00626FE2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D00951541E6CFC3B00626FE2 /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
+		D00951551E6CFC3B00626FE2 /* photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photos.png; sourceTree = "<group>"; };
 		D0ABD2A71E485F9C003478E7 /* CSPhotoAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSPhotoAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -67,6 +71,8 @@
 				D00951321E69159E00626FE2 /* CSAsset */,
 				D009513F1E69159E00626FE2 /* Info.plist */,
 				D009512E1E69159E00626FE2 /* LaunchScreen.storyboard */,
+				D00951541E6CFC3B00626FE2 /* album.png */,
+				D00951551E6CFC3B00626FE2 /* photos.png */,
 				D009512D1E69159E00626FE2 /* Assets.xcassets */,
 			);
 			path = CSPhotoAction;
@@ -173,8 +179,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00951571E6CFC3B00626FE2 /* photos.png in Resources */,
 				D00951501E69159E00626FE2 /* Info.plist in Resources */,
 				D009514D1E69159E00626FE2 /* cs_camera@3x.png in Resources */,
+				D00951561E6CFC3B00626FE2 /* album.png in Resources */,
 				D00951441E69159E00626FE2 /* Main.storyboard in Resources */,
 				D00951421E69159E00626FE2 /* Assets.xcassets in Resources */,
 				D009514E1E69159E00626FE2 /* cs_check@2x.png in Resources */,
